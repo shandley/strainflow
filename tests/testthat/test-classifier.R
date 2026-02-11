@@ -2,8 +2,8 @@ test_that("classify_evolutionary_mode assigns correct categories", {
   # Mock inStrain comparisons with known patterns
   instrain <- tibble::tibble(
     genome = rep(c("species_A", "species_B", "species_C"), each = 10),
-    name1 = paste0("sample_", rep(1:10, 3)),
-    name2 = paste0("sample_", rep(11:20, 3)),
+    sample_id_1 = paste0("sample_", rep(1:10, 3)),
+    sample_id_2 = paste0("sample_", rep(11:20, 3)),
     popANI = c(
       # species_A: high SNV variance (hypermutator)
       runif(10, 0.9990, 0.99999),
@@ -42,8 +42,8 @@ test_that("classify_evolutionary_mode assigns correct categories", {
 test_that("compute_transmission_score handles missing APSS", {
   instrain <- tibble::tibble(
     genome = c("sp_A", "sp_B"),
-    name1 = c("s1", "s3"),
-    name2 = c("s2", "s4"),
+    sample_id_1 = c("s1", "s3"),
+    sample_id_2 = c("s2", "s4"),
     popANI = c(0.999995, 0.99990),
     compared_bases_count = c(100000, 80000),
     percent_genome_compared = c(0.75, 0.60)

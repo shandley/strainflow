@@ -65,8 +65,8 @@ test_that("detect_strain_replacement identifies replacement events", {
 
   # Within-child comparisons show strain change at T90
   instrain <- tibble::tibble(
-    name1 = c("C001_T0", "C001_T0", "C001_T30"),
-    name2 = c("C001_T30", "C001_T90", "C001_T90"),
+    sample_id_1 = c("C001_T0", "C001_T0", "C001_T30"),
+    sample_id_2 = c("C001_T30", "C001_T90", "C001_T90"),
     genome = rep("sp_A", 3),
     popANI = c(0.999999, 0.99950, 0.99950),
     compared_bases_count = rep(100000, 3),

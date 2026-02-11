@@ -1,4 +1,11 @@
 test_that("load_sample_metadata validates required columns", {
+  # Create temp FASTQ files so validation passes
+  tmpdir <- tempdir()
+  r1 <- file.path(tmpdir, "r1.fq.gz")
+  r2 <- file.path(tmpdir, "r2.fq.gz")
+  file.create(r1)
+  file.create(r2)
+
   tmp <- tempfile(fileext = ".csv")
   readr::write_csv(tibble::tibble(
     sample_id = c("M001_T0", "C001_T0"),
@@ -6,15 +13,15 @@ test_that("load_sample_metadata validates required columns", {
     role = c("mother", "child"),
     timepoint_days = c(0, 0),
     pair_id = c("P001", "P001"),
-    fastq_r1 = c("r1.fq.gz", "r1.fq.gz"),
-    fastq_r2 = c("r2.fq.gz", "r2.fq.gz")
+    fastq_r1 = c(r1, r1),
+    fastq_r2 = c(r2, r2)
   ), tmp)
 
   meta <- load_sample_metadata(tmp)
   expect_s3_class(meta, "tbl_df")
   expect_equal(nrow(meta), 2)
   expect_true(all(c("sample_id", "subject_id", "role", "timepoint_days", "pair_id") %in% names(meta)))
-  unlink(tmp)
+  unlink(c(tmp, r1, r2))
 })
 
 test_that("load_sample_metadata errors on missing columns", {

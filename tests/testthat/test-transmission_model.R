@@ -38,8 +38,9 @@ test_that("classify_transmission_event assigns correct classes", {
     pair_id = rep("P001", 3),
     sample_id_mother = rep("M001_T0", 3),
     sample_id_child = rep("C001_T0", 3),
-    timepoint_days = rep(0, 3),
+    timepoint_child = rep(0, 3),
     observed_sharing = c(TRUE, TRUE, FALSE),
+    transmission_score = c(0.999999, 0.999995, 0.99990),
     background_rate = c(0.01, 0.30, 0.01),
     transmission_odds = c(150, 1.5, 0.1),
     log_odds = log10(c(150, 1.5, 0.1))
