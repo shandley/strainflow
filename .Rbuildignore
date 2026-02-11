@@ -1,0 +1,12 @@
+^_targets\.R$
+^_targets$
+^config\.yaml$
+^data$
+^output$
+^raw$
+^scripts$
+^renv$
+^renv\.lock$
+^\.Rprofile$
+^pipeline_plan\.md$
+^\.github$

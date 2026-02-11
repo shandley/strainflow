@@ -1,0 +1,17 @@
+sample_id,subject_id,role,timepoint_days,pair_id,delivery_mode,feeding_mode,fastq_r1,fastq_r2
+M001_T0,M001,mother,0,P001,vaginal,breastfed,raw/M001_T0_R1.fastq.gz,raw/M001_T0_R2.fastq.gz
+M001_T30,M001,mother,30,P001,vaginal,breastfed,raw/M001_T30_R1.fastq.gz,raw/M001_T30_R2.fastq.gz
+C001_T0,C001,child,0,P001,vaginal,breastfed,raw/C001_T0_R1.fastq.gz,raw/C001_T0_R2.fastq.gz
+C001_T30,C001,child,30,P001,vaginal,breastfed,raw/C001_T30_R1.fastq.gz,raw/C001_T30_R2.fastq.gz
+C001_T90,C001,child,90,P001,vaginal,breastfed,raw/C001_T90_R1.fastq.gz,raw/C001_T90_R2.fastq.gz
+C001_T180,C001,child,180,P001,vaginal,breastfed,raw/C001_T180_R1.fastq.gz,raw/C001_T180_R2.fastq.gz
+M002_T0,M002,mother,0,P002,cesarean,formula,raw/M002_T0_R1.fastq.gz,raw/M002_T0_R2.fastq.gz
+M002_T30,M002,mother,30,P002,cesarean,formula,raw/M002_T30_R1.fastq.gz,raw/M002_T30_R2.fastq.gz
+C002_T0,C002,child,0,P002,cesarean,formula,raw/C002_T0_R1.fastq.gz,raw/C002_T0_R2.fastq.gz
+C002_T30,C002,child,30,P002,cesarean,formula,raw/C002_T30_R1.fastq.gz,raw/C002_T30_R2.fastq.gz
+C002_T90,C002,child,90,P002,cesarean,formula,raw/C002_T90_R1.fastq.gz,raw/C002_T90_R2.fastq.gz
+C002_T180,C002,child,180,P002,cesarean,formula,raw/C002_T180_R1.fastq.gz,raw/C002_T180_R2.fastq.gz
+M003_T0,M003,mother,0,P003,vaginal,mixed,raw/M003_T0_R1.fastq.gz,raw/M003_T0_R2.fastq.gz
+C003_T0,C003,child,0,P003,vaginal,mixed,raw/C003_T0_R1.fastq.gz,raw/C003_T0_R2.fastq.gz
+C003_T30,C003,child,30,P003,vaginal,mixed,raw/C003_T30_R1.fastq.gz,raw/C003_T30_R2.fastq.gz
+C003_T90,C003,child,90,P003,vaginal,mixed,raw/C003_T90_R1.fastq.gz,raw/C003_T90_R2.fastq.gz

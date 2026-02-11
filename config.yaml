@@ -1,0 +1,103 @@
+# ============================================================
+# StrainFlow Pipeline Configuration
+# ============================================================
+
+project:
+  name: "mc_strain_transmission"
+  output_dir: "output"
+  log_dir: "output/logs"
+
+metadata:
+  sample_sheet: "data/metadata/sample_metadata.csv"
+  pair_sheet: "data/metadata/pair_metadata.csv"
+
+# External tool paths (null = use PATH)
+tools:
+  fastp: null
+  bowtie2: null
+  samtools: null
+  megahit: null
+  blastn: null
+  conda_env: "strainflow_env"
+
+# Reference data
+reference:
+  human_genome_index: "data/reference/human_genome/GRCh38"
+  species_genome_fasta: "data/reference/species_genomes/all_species.fasta"
+  species_genome_index: "data/reference/species_genomes/all_species_bt2"
+  stb_file: "data/reference/species_genomes/scaffold_to_bin.stb"
+
+# Step 1: QC
+qc:
+  threads: 4
+  min_length: 50
+  qualified_quality_phred: 20
+  cut_front: true
+  cut_tail: true
+  cut_window_size: 4
+  cut_mean_quality: 20
+
+# Step 2: Host removal
+host_removal:
+  threads: 8
+
+# Step 3: Taxonomic profiling
+taxonomic_profiling:
+  threads: 4
+  analysis_type: "rel_ab_w_read_stats"
+
+# Step 4: Read mapping
+read_mapping:
+  threads: 8
+  max_insert_size: 1000
+
+# Step 5: Assembly
+assembly:
+  threads: 8
+  min_contig_len: 1000
+
+# Step 6: inStrain profile
+instrain_profile:
+  processes: 6
+  min_read_ani: 0.95
+  min_mapq: -1
+  min_cov: 5
+  min_freq: 0.05
+  min_genome_coverage: 0.5
+
+# Step 6: inStrain compare
+instrain_compare:
+  processes: 6
+  min_cov: 5
+  min_freq: 0.05
+
+# Step 7: SynTracker
+syntracker:
+  region_length: 1000
+  region_spacing: 4000
+  min_identity: 0.97
+  min_coverage: 0.70
+  n_regions: 100
+  flank_length: 2000
+
+# Step 8-9: Transmission analysis
+transmission:
+  popANI_threshold: 0.99999
+  conANI_threshold: 0.99999
+  apss_threshold: 0.95
+  min_compared_bases: 50000
+  min_compared_regions: 20
+  min_breadth: 0.5
+  persistence_window_days: 30
+  n_negative_controls: 5
+
+# Step 11: Visualization
+visualization:
+  figure_format: "pdf"
+  figure_dpi: 300
+  figure_width: 10
+  figure_height: 8
+
+# Pipeline execution
+execution:
+  workers: 4

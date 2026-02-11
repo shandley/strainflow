@@ -1,0 +1,4 @@
+pair_id,mother_subject_id,child_subject_id,delivery_mode,gestational_age_weeks,birth_weight_g
+P001,M001,C001,vaginal,39,3250
+P002,M002,C002,cesarean,38,3100
+P003,M003,C003,vaginal,40,3450

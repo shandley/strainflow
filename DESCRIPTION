@@ -1,0 +1,56 @@
+Package: strainflow
+Title: Multi-Signal Strain Transmission Analysis for Mother-Child Microbiome Studies
+Version: 0.1.0
+Authors@R:
+    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: An integrated pipeline for characterizing bacterial strain transmission
+    between mothers and children using longitudinal shotgun metagenomics. Combines
+    inStrain (SNV-based) and SynTracker (synteny-based) strain comparison with novel
+    analytical modules including a multi-signal transmission classifier, a transmission
+    vs. environmental acquisition model, and a longitudinal strain dynamics engine.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
+Imports:
+    dplyr (>= 1.1.0),
+    tidyr (>= 1.3.0),
+    purrr (>= 1.0.0),
+    readr (>= 2.1.0),
+    tibble (>= 3.2.0),
+    glue (>= 1.6.0),
+    stringr (>= 1.5.0),
+    fs (>= 1.6.0),
+    yaml (>= 2.3.0),
+    processx (>= 3.8.0),
+    ggplot2 (>= 3.4.0),
+    patchwork (>= 1.1.0),
+    scales (>= 1.2.0),
+    viridis (>= 0.6.0),
+    ggrepel (>= 0.9.0),
+    survival (>= 3.5.0),
+    lme4 (>= 1.1.0),
+    broom (>= 1.0.0),
+    jsonlite (>= 1.8.0),
+    cli (>= 3.6.0),
+    rlang (>= 1.1.0)
+Suggests:
+    targets (>= 1.3.0),
+    tarchetypes (>= 0.7.0),
+    crew (>= 0.9.0),
+    ComplexHeatmap (>= 2.14.0),
+    ggraph (>= 2.1.0),
+    tidygraph (>= 1.2.0),
+    ggalluvial (>= 0.12.0),
+    DECIPHER (>= 2.26.0),
+    Biostrings (>= 2.66.0),
+    brms (>= 2.20.0),
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown,
+    withr
+Config/testthat/edition: 3
+VignetteBuilder: knitr
+URL: https://github.com/yourusername/strainflow
+BugReports: https://github.com/yourusername/strainflow/issues

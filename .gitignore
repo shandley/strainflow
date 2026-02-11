@@ -1,0 +1,29 @@
+# R package build
+*.tar.gz
+*.Rcheck/
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# targets pipeline store
+_targets/
+
+# Output data (large files)
+output/
+data/reference/
+raw/
+
+# renv
+renv/library/
+renv/staging/
+renv/sandbox/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+*.swp
+*.swo
